@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "jenkins-master",
+    "image": "ticketfly/jenkins-example-aws-ecs",
+    "MountPoints": [
+      {
+        "SourceVolume": "data-volume",
+        "ContainerPath": "/var/jenkins_home"
+      }
+    ],
+    "Essential": true,
+    "Cpu": 1024,
+    "MemoryReservation": 992,
+    "PortMappings": [
+      {
+        "HostPort": 8080,
+        "ContainerPort": 8080,
+        "Protocol": "tcp"
+      },
+      {
+        "HostPort": 50000,
+        "ContainerPort": 50000,
+        "Protocol": "tcp"
+      }
+    ]
+  }
+]
